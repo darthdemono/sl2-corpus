@@ -68,6 +68,10 @@ The public Steam account associated with this corpus is `76561199030416229`. Whe
 
 Package and source provenance are deliberately not published here. They are not useful to somebody evaluating the save contents, and they are not needed to reproduce an analysis. The public reports retain the environment metadata that is useful: game edition, verified version where known, platform, launcher, Proton version, OS, and DLC.
 
+## License
+
+The corpus is licensed under [CC BY 4.0](LICENSE). You may copy, share, adapt, and build on the saves and documentation, including commercially, as long as you credit **sl2-corpus by DarthDemono**, link to this repository and the license, and say what you changed. The license covers this collection and its documentation; `sl2-analyzer` is a separate project with its own license.
+
 ## Limits and status
 
 This is an ongoing archive, not a claim to have every FromSoftware game, every branch, or every possible state. The current scope is explicit above. New games enter only after their copies can be made safely and the analyzer can read them consistently. That standard is slower than dropping files into a folder. It is also the whole point.
