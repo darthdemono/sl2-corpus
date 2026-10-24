@@ -8,20 +8,21 @@ The corpus exists because save data is rarely preserved as a timeline. Most publ
 
 ## What is here now
 
-The current snapshot contains 153 individual PC `.sl2` files. They remain as individual files on purpose: an editor author can take one exact fixture, a researcher can cite one exact snapshot, and a player can inspect one exact state without extracting an archive just to find it.
+The current snapshot contains 280 individual PC `.sl2` files. They remain as individual files on purpose: an editor author can take one exact fixture, a researcher can cite one exact snapshot, and a player can inspect one exact state without extracting an archive just to find it.
 
 - **Dark Souls II: Scholar of the First Sin** contains 28 snapshots: Joy's progression from level 127 to 197, plus a level-10 `test char` fixture. See [`Dark Souls II SOTFS/README.md`](Dark%20Souls%20II%20SOTFS/README.md).
 - **Sekiro: Shadows Die Twice** contains 125 files: 124 readable Wolf snapshots from Attack Power 1 through 14, plus one empty save container. See [`Sekiro Shadows Die Twice/README.md`](Sekiro%20Shadows%20Die%20Twice/README.md).
+- **Dark Souls III** contains 127 snapshots: Joy's character from level 17 to 114, including the End of Fire, Link the Flame, Unkindled and Usurpation of Fire endings. See [`Dark Souls III/README.md`](Dark%20Souls%20III/README.md).
 
 [`Combined.md`](Combined.md) is the dense, generated cross-game report. It is deliberately not this README. A first-time visitor needs to know what the archive is, whether it is safe enough for their purpose, and how to read it. They do not need 2,000 lines of boss tables before they know what they downloaded.
 
-DS1, DS3, and Elden Ring are not included in this snapshot. Their absence is not a mysterious gap in the documentation; those collections are still being curated and tested. A corpus should state its boundary instead of quietly pretending that it has none.
+DS1 and Elden Ring are not included in this snapshot. Their absence is not a mysterious gap in the documentation; those collections are still being curated and tested. A corpus should state its boundary instead of quietly pretending that it has none.
 
 ## Why individual files do not mean an enormous Git repository
 
 The saves themselves are fixed-size game containers. A valid DS2 or Sekiro save cannot simply have nine unused slot blocks cut out of it and remain a trustworthy `.sl2`; the games index those blocks at fixed positions. So this corpus does not pretend that zero-filling padding is physical trimming. It is not.
 
-Git is the space-saving layer here. The 153 individual raw files occupy about 1.7 GB after checkout, but Git's native delta compression packs this exact set to about 38.8 MiB because snapshots share almost all of their bytes. You get real, individually usable `.sl2` files after checkout; the repository does not need to store 1.7 GB of repeated padding as separate history objects. This is the boring solution. It is also the correct one.
+Git is the space-saving layer here. The 153 individual raw files of the first snapshot occupy about 1.7 GB after checkout, but Git's native delta compression packs this exact set to about 38.8 MiB because snapshots share almost all of their bytes. You get real, individually usable `.sl2` files after checkout; the repository does not need to store 1.7 GB of repeated padding as separate history objects. This is the boring solution. It is also the correct one.
 
 The cost is local disk space. A clone or checkout expands the files. That is unavoidable if the objective is to hand somebody actual game-valid `.sl2` files rather than a custom compressed format. Storage on disk is the trade; individual inspectable files are the benefit.
 
