@@ -1,0 +1,10 @@
+# Local LLM assistant instructions, workspace state, and session notes.
+.claude/
+.codex/
+.gemini/
+.cursor/
+AGENTS*.md
+CLAUDE*.md
+CODEX*.md
+GEMINI*.md
+Handoff/
